@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Poke-ke Bowl</title>
         <meta name="description" content="Best poke bowl" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/img/favicon.jpeg" />
       </Head>
       Hello
     </div>
