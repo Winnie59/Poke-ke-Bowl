@@ -1,0 +1,36 @@
+.container {
+    height: calc(100vh - 135px);
+    overflow: hidden;
+    position: relative
+}
+
+.arrow {
+    position: absolute;
+    width: 3%;
+    height: 10%;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.wrapper {
+    width: 300vw;
+    height: 100%;
+    display: flex;
+    transition: all 1.5s ease-in-out ;
+}
+
+.imgSlider {
+width: 100vw;
+height: 100%;
+background-color: #1be6cf;
+position: relative;
+}
+
+@media screen and (max-width: 480px) {
+.container{
+    height: 50vh;
+}
+}

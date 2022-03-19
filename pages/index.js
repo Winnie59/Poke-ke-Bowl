@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Slider from '../component/Slider'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -10,7 +11,7 @@ export default function Home() {
         <meta name="description" content="Best poke bowl" />
         <link rel="icon" href="/img/favicon.jpeg" />
       </Head>
-      Hello
+      <Slider />
     </div>
   )
 }

@@ -87,7 +87,7 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    color: orange;
+    color: black;
 }
 
 @media screen and (max-width:480px) {
