@@ -1,0 +1,128 @@
+.container {
+    padding: 50px;
+    display: flex;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.left {
+    flex: 2;
+}
+
+.right {
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    border-spacing: 20px;
+}
+
+.tr {
+    text-align: center;
+}
+
+.wrapper {
+    width: 90%;
+    max-height: 300px;
+    background-color: #333;
+    padding: 50px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 10px 5px 5px lightgray
+}
+  
+.totalAmountSub {
+    margin-right: 20px;
+} 
+
+.totalAmountDiscount {
+    margin-right: 18px;
+}
+
+.totalAmountTax {
+    margin-right: 60px;
+}
+
+.totalAmountTotal {
+    margin-right: 48px;
+}
+
+.cartTotal {
+    text-align: center;
+}
+
+.button {
+    height: 30px;
+    margin-top: 20px;
+    background-color: teal;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trTitle{
+        display: none;
+    }
+
+    .tr{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .img{
+        width: 35vw;
+        height: 35vw;
+    }
+
+    .name,.total{
+        font-size: 24px;
+    }
+
+    .price,.quantity{
+        font-size: 22px;
+    }
+
+    .price::before{
+        content: "Price: ";
+        font-weight: 500;
+    }
+    .quantity::before{
+        content: "Quantity: ";
+        font-weight: 500;
+    }
+    .total::before{
+        content: "Total: ";
+        font-weight: 500;
+    }
+
+    .wrapper{
+        width: 100%;
+    }
+}
