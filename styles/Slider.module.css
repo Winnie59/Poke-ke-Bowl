@@ -23,10 +23,10 @@
 }
 
 .imgSlider {
-width: 100vw;
-height: 100%;
-background-color: #1be6cf;
-position: relative;
+    width: 100vw;
+    height: 100%;
+    background-color: #1be6cf;
+    position: relative;
 }
 
 @media screen and (max-width: 480px) {

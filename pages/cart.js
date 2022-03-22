@@ -38,7 +38,6 @@ const Cart = () => {
                     </td>
                 </tr>
             </table>
-            
         </div>
         <div className={styles.right}>
             <div className={styles.wrapper}>
