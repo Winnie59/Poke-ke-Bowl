@@ -2,16 +2,13 @@ import React from 'react'
 import styles from '../styles/Pokes.module.css'
 import Poke from './Poke'
 
-const Pokes = () => {
+const Pokes = ({pokes}) => {
   return (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <Poke />
-            <Poke />
-            <Poke />
-            <Poke />
-            <Poke />
-            <Poke />
+          {pokes.map((poke) => (
+            <Poke key={poke._id} poke={poke}/>
+          ))}
         </div>
     </div>
   )

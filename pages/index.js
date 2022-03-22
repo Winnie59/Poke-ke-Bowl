@@ -1,10 +1,10 @@
+import axios from 'axios'
 import Head from 'next/head'
-import Image from 'next/image'
 import Pokes from '../component/Pokes'
 import Slider from '../component/Slider'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({pokes}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,7 +13,16 @@ export default function Home() {
         <link rel="icon" href="/img/favicon.jpeg" />
       </Head>
       <Slider />
-      <Pokes />
+      <Pokes pokes={pokes} />
     </div>
   )
+}
+
+export const getServerSideProps = async () => {
+  const res = await axios.get('http://localhost:3000/api/pokes/')
+  return {
+    props: {
+      pokes: res.data
+    }
+  }
 }
