@@ -4,8 +4,8 @@ import Image from 'next/image'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Cart = () => {
+    const cart = useSelector((state) => state.cart)
     const dispatch = useDispatch()
-    const cart = useSelector(state => state.cart)
   return (
     <div className={styles.container}>
         <div className={styles.left}>
@@ -18,27 +18,27 @@ const Cart = () => {
                     <th>Price</th>
                     <th>Total</th>
                 </tr>
-                {cart.pokes.map((poke) => (
-                    <tr className={styles.tr} key={poke._id}>
+                {cart.products.map((product) => (
+                    <tr className={styles.tr} key={product._id}>
                         <td>
                             <div className={styles.img}>
-                                <Image src={poke.img} alt='aloha' layout='fill' objectFit='cover' />  
+                                <Image src={product.img} alt='aloha' layout='fill' objectFit='cover' />  
                             </div>
                         </td>
                         <td>
-                            <span className={styles.name}>{poke.name}</span>
+                            <span className={styles.name}>{product.name}</span>
                         </td>
                         <td>
-                            <span className={styles.size}>{(poke.size === 1) ? 'Large' : 'Regular'}</span>
+                            <span className={styles.size}>{(product.size === 1) ? 'Large' : 'Regular'}</span>
                         </td>
                         <td>
-                            <span className={styles.quantity}>{poke.quantity}</span>
+                            <span className={styles.quantity}>{product.quantity}</span>
                         </td>
                         <td>
-                            <span className={styles.price}>$ {poke.price}</span>
+                            <span className={styles.price}>$ {product.price}</span>
                         </td>
                         <td>
-                            <span className={styles.total}>$ {poke.price * poke.quantity}</span>
+                            <span className={styles.total}>$ {product.price * product.quantity}</span>
                         </td>
                     </tr>   
                 ))}

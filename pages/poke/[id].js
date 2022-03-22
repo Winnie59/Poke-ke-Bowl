@@ -22,7 +22,7 @@ const Pokeke = ({poke}) => {
     }
 
     const handleClick = () => {
-        dispatch(addProduct({...poke,size, price, quantity}))
+        dispatch(addProduct({...poke, size, price, quantity}))
     }
 
   return (
