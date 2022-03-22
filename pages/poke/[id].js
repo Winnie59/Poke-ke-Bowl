@@ -2,11 +2,14 @@ import React, {useState} from 'react'
 import styles from '../../styles/ShowPoke.module.css'
 import Image from 'next/image'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice'
 
 const Pokeke = ({poke}) => {
     const [price, setPrice] = useState(poke.price[0])
     const [size, setSize] = useState(0)
     const [quantity, setQuantity] = useState(1)
+    const dispatch = useDispatch()
 
     const changePrice = (extra) => {
         setPrice(price + extra)
@@ -16,6 +19,10 @@ const Pokeke = ({poke}) => {
         const difference = poke.price[sizeIndex] - poke.price[size]
         changePrice(difference)
         setSize(sizeIndex)
+    }
+
+    const handleClick = () => {
+        dispatch(addProduct({...poke, price, quantity}))
     }
 
   return (
@@ -36,7 +43,7 @@ const Pokeke = ({poke}) => {
             </div>
             <div className={styles.cart}>
                 <input onChange={(e) => setQuantity(e.target.value)} type="number" defaultValue={1} className={styles.quantity} />
-                <button className={styles.button}>Add to Cart</button>
+                <button className={styles.button} onClick={handleClick}>Add to Cart</button>
             </div>
         </div>
         <div className={styles.right}>
