@@ -13,7 +13,7 @@ const Cash = ({total, createOrder}) => {
   return (
     <div className={styles.container}>
         <div className={styles.wrapper}>
-            <h1 className={styles.title}>Pay at Delivery</h1>
+            <h1 className={styles.title}>Pay at Deliver</h1>
             <div className={styles.item}>
                 <label>Name</label>
                 <input type="text" placeholder='Winnie Bolm' className={styles.input} onChange={(e)=>setCustomer(e.target.value)}/>
