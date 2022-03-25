@@ -38,17 +38,17 @@ const Navbar = () => {
           }      
         </ul>
       </div>
-      <Link href='/cart' passHref>
         <div className={styles.item}>
         { user && 
             <li className={styles.username}>{user.name}</li>
-          } 
-          <div className={styles.cart}>
+        } 
+         <Link href='/cart' passHref>   
+            <div className={styles.cart}>
               <Image src="/img/cart.png" alt="" width="55px" height="55px" />
               <div className={styles.counter}>{quantity}</div>
-          </div>
+            </div>
+          </Link>
         </div>
-      </Link>
     </div>
   )
 }
