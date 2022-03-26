@@ -25,9 +25,9 @@ export default function Home({pokes}) {
         <link rel="icon" href="/img/logo2.png" />
       </Head>
       <Slider />
-      {admin && <button><AddNew setClose={setClose}/></button>}
+      {admin && <AddNew setClose={setClose}/>}
       <Pokes pokes={pokes} />
-      {!close && <Add setClose={setClose} />}
+      {!close && <Add setClose={setClose} pokes={pokes} />}
     </div>
   )
 }
