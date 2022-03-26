@@ -2,16 +2,26 @@ import React, { useState } from 'react'
 import styles from '../../styles/Admin.module.css'
 import Image from 'next/image'
 import axios from 'axios'
+import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 
 const Admin = ({orders, pokes}) => {
     const [pokeList, setPokeList] = useState(pokes)
     const [orderList, setOrderList] = useState(orders)
     const status = ['preparing', 'to pick up', 'on the way', 'delivered']
 
-    const handleDelete = async (id) => {
+    const handleDeletePoke = async (id) => {
         try {
             const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${id}`)
             setPokeList(pokeList.filter((poke)=> poke._id !== id))
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
+    const handleDeleteOrder = async (id) => {
+        try {
+            const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}/api/orders/${id}`)
+            setOrderList(orderList.filter((order)=> order._id !== id))
         } catch(err) {
             console.log(err)
         }
@@ -64,7 +74,7 @@ const Admin = ({orders, pokes}) => {
                             <td>$ {poke.price[0]}, $ {poke.price[1]}</td>
                             <td>
                                 <button className={styles.button}>Edit</button>
-                                <button className={styles.button} onClick={()=>handleDelete(poke._id)} >Delete</button>
+                                <button className={styles.button} onClick={()=>handleDeletePoke(poke._id)} >Delete</button>
                             </td>
                         </tr>     
                     </tbody>
@@ -94,6 +104,7 @@ const Admin = ({orders, pokes}) => {
                             <td>{status[order.status]}</td>
                             <td>
                                 <button className={styles.next} onClick={()=>handleStatus(order._id)}>Next Stage</button>
+                                <button onClick={()=>handleDeleteOrder(order._id)} >Delete</button>
                             </td>
                         </tr>
                     </tbody>    
@@ -116,4 +127,4 @@ export const getServerSideProps = async () => {
     }
 }
 
-export default Admin
+export default withPageAuthRequired(Admin)

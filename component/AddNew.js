@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 import styles from '../styles/AddNew.module.css'
 
@@ -8,6 +9,7 @@ const AddNew = ({setClose}) => {
             Add New Poke
         </button>
     </div>
+    
   )
 }
 

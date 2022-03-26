@@ -9,6 +9,11 @@ const Navbar = () => {
   const {user} = useUser()
   const quantity = useSelector(state => state.cart.quantity)
 
+  let admin = false
+  if(user && user.email === `${process.env.NEXT_PUBLIC_ADMIN}`) {
+    admin = true
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -39,15 +44,18 @@ const Navbar = () => {
         </ul>
       </div>
         <div className={styles.item}>
-        { user && 
-            <li className={styles.username}>{user.name}</li>
-        } 
-         <Link href='/cart' passHref>   
-            <div className={styles.cart}>
-              <Image src="/img/cart.png" alt="" width="55px" height="55px" />
-              <div className={styles.counter}>{quantity}</div>
-            </div>
-          </Link>
+          { (user && admin) && 
+              <li className={styles.username}>Admin {user.name}</li> 
+          }
+          { (user && !admin) &&
+              <li className={styles.username}>{user.name}</li>
+          } 
+          <Link  href={(user && admin) ? '/admin' : '/cart'} passHref>   
+          <div className={styles.cart}>
+            <Image src="/img/cart.png" alt="" width="55px" height="55px" />
+            <div className={styles.counter}>{quantity}</div>
+          </div>
+        </Link>
         </div>
     </div>
   )

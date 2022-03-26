@@ -3,15 +3,12 @@ import React, { useEffect, useState } from 'react'
 import styles from '../styles/AddNew.module.css'
 import Image from 'next/image'
 
-const Add = ({setClose, pokes}) => {
+const Add = ({setClose,refreshData}) => {
     const [file, setFile] = useState()
     const [name, setName] = useState()
     const [description, setDescription] = useState()
     const [price, setPrice] = useState([])
     const [previewSource, setPreviewSource] = useState()
-    const [pokeList, setPokeList] = useState(pokes)
-
-    console.log(pokeList)
 
     const changePrice = (e, index) => {
         const currentPrices = price
@@ -45,10 +42,7 @@ const Add = ({setClose, pokes}) => {
             }
             const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/pokes`, newPoke)
             setClose(true)
-            setPokeList([
-                res.data,
-                ...pokeList
-            ])
+            refreshData()
         } catch (err) {
             console.log(err)
         }
