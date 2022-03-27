@@ -23,6 +23,9 @@ const OrderPokeSchema = new mongoose.Schema({
     method: {
         type: Number,
         required: true
+    },
+    userId: {
+        type: String
     }
 }, {timestamps: true})
 

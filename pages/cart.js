@@ -8,8 +8,10 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { reset } from '../redux/cartSlice'
 import Cash from '../component/Cash'
+import { useUser } from '@auth0/nextjs-auth0'
 
 const Cart = () => {
+    const {user} = useUser()
     const cart = useSelector((state) => state.cart)
     const [open, setOpen] = useState(false)
     const [cash, setCash] = useState(false)
@@ -79,7 +81,8 @@ const Cart = () => {
                         createOrder({
                             customer: shipping.name.full_name, address: shipping.address.address_line_1,
                             total: cart.total,
-                            method: 1
+                            method: 1,
+                            userId: user.sub
                         })
                     });
                 }}

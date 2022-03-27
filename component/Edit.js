@@ -12,7 +12,7 @@ const Edit = ({setClose,poke}) => {
 
     const handleChange = (e) =>{
         setEditForm({
-                ...editForm,[e.target.id]: e.target.value
+                ...editForm,[e.target.name]: e.target.value
             })
     }
 
@@ -35,17 +35,17 @@ const Edit = ({setClose,poke}) => {
             <h1>Edit Poke</h1>
             <div className={styles.item}>
                 <label className={styles.label}>Name</label>
-                <input className={styles.input} type="text" onChange={handleChange} defaultValue={poke.name} id='name'/>
+                <input className={styles.input} type="text" onChange={handleChange} defaultValue={poke.name} name='name'/>
             </div>
             <div className={styles.item}>
                 <label className={styles.label}>Description</label>
-                <textarea rows={4} type="text" onChange={handleChange} defaultValue={poke.description} id='description'/>
+                <textarea rows={4} type="text" onChange={handleChange} defaultValue={poke.description} name='description'/>
             </div>
             {/* <div className={styles.item}>
                 <label className={styles.label}>Price</label>
                 <div className={styles.priceContainer} >
-                    <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder='Regular' onChange={handleChange} defaultValue={poke.price[0]} id='price'/>
-                    <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder='Large' onChange={handleChange} defaultValue={poke.price[1]} id='price'/>
+                    <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder='Regular' onChange={handleChange} defaultValue={poke.price[0]} name='price'/>
+                    <input className={`${styles.input} ${styles.inputSm}`} type="number" placeholder='Large' onChange={handleChange} defaultValue={poke.price[1]} name='price'/>
                 </div>
             </div> */}
             <button onClick={handleSubmit} className={styles.createButton} >Create</button>

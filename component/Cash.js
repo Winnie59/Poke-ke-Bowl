@@ -1,3 +1,4 @@
+import { getSession, useUser } from '@auth0/nextjs-auth0'
 import React, { useState } from 'react'
 import styles from '../styles/Cash.module.css'
 
@@ -5,9 +6,11 @@ const Cash = ({total, createOrder}) => {
     const [customer, setCustomer] = useState('')
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
+    const {user} = useUser()
+    const userId = user.sub
 
     const handleClick = () => {
-      createOrder({ customer, address, phone, total, method: 0 });
+      createOrder({ customer, address, phone, total, method: 0, userId });
     }
 
   return (

@@ -51,9 +51,11 @@ const Navbar = () => {
           }
            </div>
           </Link>
+          <Link href='/user/me' passHref>
           { (user && !admin) &&
               <li className={styles.username}>{user.name}</li>
           } 
+          </Link>
           <Link  href='/cart' passHref>   
           <div className={styles.cart}>
             <Image src="/img/cart.png" alt="" width="55px" height="55px" />
