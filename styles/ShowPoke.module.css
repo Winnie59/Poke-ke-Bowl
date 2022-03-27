@@ -1,13 +1,13 @@
 .container {
     height: calc(100vh - 135px);
     display: flex;
-    margin: 0 5%;
+    margin: 0;
 }
 
 .left {
     flex: 1;
     text-align: center;
-    margin-top: 9%;
+    margin-top: 4%;
 }
 
 .right {
@@ -91,6 +91,15 @@
     border-radius: 5px;
 }
 
+.edit {
+  margin-top: 0;
+  justify-content: left;
+  text-align: left;
+}
+
+.menu {
+  margin-left: 5%;
+}
 
 
 @media screen and (max-width: 480px) {

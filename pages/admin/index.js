@@ -7,7 +7,7 @@ import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 const Admin = ({orders, pokes}) => {
     const [pokeList, setPokeList] = useState(pokes)
     const [orderList, setOrderList] = useState(orders)
-    const status = ['preparing', 'to pick up', 'on the way', 'delivered']
+    const status = ['preparing', 'to pick up', 'on the way', 'delivered','complete']
 
     const handleDeletePoke = async (id) => {
         try {
@@ -69,7 +69,7 @@ const Admin = ({orders, pokes}) => {
                             <td>
                                 <Image src={poke.img} alt='' width={50} height={50}  objectFit="cover" />
                             </td>
-                            <td>{poke._id.slice(0,5)}...</td>
+                            <td>...{poke._id.slice(19,24)}</td>
                             <td>{poke.name}</td>
                             <td>$ {poke.price[0]}, $ {poke.price[1]}</td>
                             <td>
@@ -97,14 +97,14 @@ const Admin = ({orders, pokes}) => {
                 {orderList.map((order) => (
                     <tbody key={order._id}>
                         <tr className={styles.trTitle}>
-                            <td>{order._id.slice(0,5)}...</td>
+                            <td>...{order._id.slice(19,24)}</td>
                             <td>{order.customer}</td>
                             <td>$ {order.total}</td>
                             <td>{(order.method === 0 ? 'Cash' : 'Paid')}</td>
                             <td>{status[order.status]}</td>
-                            <td>
+                            <td> 
                                 <button className={styles.next} onClick={()=>handleStatus(order._id)}>Next Stage</button>
-                                <button onClick={()=>handleDeleteOrder(order._id)} >Delete</button>
+                                 <button onClick={()=>handleDeleteOrder(order._id)} >Delete</button> 
                             </td>
                         </tr>
                     </tbody>    

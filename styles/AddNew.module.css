@@ -87,3 +87,7 @@
     align-self: flex-end;
     border-radius: 3px;
 }
+
+.edit {
+    width: 50px;
+}
