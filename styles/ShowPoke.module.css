@@ -98,7 +98,7 @@
 }
 
 .menu {
-  margin-left: 5%;
+  margin-left: 15%;
 }
 
 
@@ -107,7 +107,7 @@
       height: auto;
       text-align: center;
       flex-direction: column;
-      margin-top: 20px;
+      margin-top: 5px;
     }
   
     .imgContainer {
@@ -144,5 +144,9 @@
       height: 50px;
       padding: 10px 20px;
       margin-bottom: 5%;
+    }
+
+    .menu {
+      margin-left: 2%;
     }
 }

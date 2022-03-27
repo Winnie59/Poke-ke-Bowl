@@ -33,58 +33,14 @@ const Pokeke = ({poke}) => {
   const handleClick = () => {
       dispatch(addProduct({...poke, size, price, quantity}))
   }
-  const [editForm, setEditForm] = useState(poke)
-  // const [pokesList, setPokesList] =useState(pokes)
-  const [file, setFile] = useState()
-  const [previewSource, setPreviewSource] = useState()
 
-  let handleChange = (e) =>{
-      setEditForm({
-              ...editForm,[e.target.id]: e.target.value
-          })
-  }
-  
-  const handleChangeFile = (e) => {
-      const file = e.target.files[0]
-      setFile(file)
-      previewfile(file)
-  }
-
-  const previewfile = (file) => {
-      const reader = new FileReader()
-      reader.readAsDataURL(file)
-      reader.onloadend = () => {
-          setPreviewSource(reader.result)
-      }
-  }
-
-  const handleSubmit = async(id) => {
-      const formData = new FormData()
-      formData.append('file',file)
-      formData.append('upload_preset','uploads')
-      try {
-          const uploadRes = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_cloudName}/image/upload`, formData)
-          const { url } = uploadRes.data
-          const editPoke = {
-              editForm
-          }
-          const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${id}`, editPoke)
-          setClose(true)
-          // setPokesList([
-          //     res.data,
-          //     ...pokesList.filter((poke) => poke._id !== id)
-          // ])
-      } catch (err) {
-          console.log(err)
-      }
-  }
 
   return (
     <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.edit}>
             {admin && <EditBtn setClose={setClose}/>}
-            {!close && <Edit setClose={setClose} poke ={poke} handleChange={handleChange} handleChangeFile={handleChangeFile} handleSubmit={handleSubmit} previewSource={previewSource}/> }
+            {!close && <Edit setClose={setClose} poke ={poke}/> }
           </div>
             <div className={styles.menu}>
               <h1 className={styles.title}>{poke.name}</h1>
