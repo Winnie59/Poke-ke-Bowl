@@ -41,14 +41,6 @@ const Admin = ({orders, pokes}) => {
         }
     }
 
-    // const handleUpdate = async (id) => {
-    //     try {
-    //         const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${id}`)
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
-
   return (
     <div className={styles.container}>
         <div className={styles.item}>
