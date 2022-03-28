@@ -44,18 +44,22 @@ const Navbar = () => {
         </ul>
       </div>
         <div className={styles.item}>
+          
           <Link href='/admin' passHref >
-          <div className={styles.item}>
+          <div>
           { (user && admin) && 
               <li className={styles.username}>Admin {user.name}</li> 
           }
            </div>
           </Link>
           <Link href='/user/me' passHref>
+          <div>
           { (user && !admin) &&
               <li className={styles.username}>{user.name}</li>
-          } 
+          }
+           </div>
           </Link>
+          
           <Link  href='/cart' passHref>   
           <div className={styles.cart}>
             <Image src="/img/cart.png" alt="" width="55px" height="55px" />
