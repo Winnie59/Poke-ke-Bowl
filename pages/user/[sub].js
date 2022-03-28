@@ -13,8 +13,6 @@ const User = ({orders}) => {
     if (user) {
       const findItem = orderList.filter(order=> order.userId === user.sub)
       setOrderList(findItem)
-     
-      console.log(findItem)
     }
   }
 
