@@ -1,6 +1,7 @@
 .container {
     padding: 50px;
     display: flex;
+    height: calc(100vh - 135px);
 }
 
 .img {

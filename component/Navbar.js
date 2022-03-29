@@ -26,10 +26,11 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-        <li className={styles.listItem}>Home</li>
+          <Link href='/' passHref >
+          <li className={styles.listItem}>Home</li>
+          </Link>
           <li className={styles.listItem}>Menu</li>
           <li className={styles.listItem}>Pick Poke</li>
-          <li className={styles.listItem}>About</li>
           <li className={styles.listItem}>Contact</li>
           { !user ?
             <Link href='/api/auth/login' passHref>

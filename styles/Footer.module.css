@@ -1,3 +1,76 @@
 .container {
+  height: calc(100vh - 95px);
+  background-image: url('/img/sea.png');
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.item {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.item:last-child {
+  flex: 2;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.title {
+  font-size: 18px;
+  color: #b7903c;
+  text-align: center;
+}
+
+.text {
+  color: rgb(44, 44, 44);
+  text-align: center;
+}
+
+.motto {
+  color: rgb(85, 84, 84);
+  text-align: center;
+  font-size: 23px;
+  font-family: 'Josefin Sans', sans-serif;
+  padding-top: 25px;
+  text-shadow: 2px 2px lightgray;
+  
+}
+
+.map {
+    cursor: pointer;
+    border-radius: 5px;
     
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: auto;
+    text-align: center;
+    background-image:url('/img/sea2.jpeg') ;
+  }
+  .item:first-child {
+    display: none;
+  }
+
+  .item {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
 }

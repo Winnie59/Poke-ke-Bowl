@@ -30,6 +30,7 @@ export default function Home({pokes}) {
         <title>Poke-ke Bowl</title>
         <meta name="description" content="Best poke bowl" />
         <link rel="icon" href="/img/logo2.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;600&display=swap" rel="stylesheet"/>
       </Head>
       <Slider />
       {admin && <AddNew setClose={setClose}/>}

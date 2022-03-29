@@ -65,7 +65,6 @@ const Admin = ({orders, pokes}) => {
                             <td>{poke.name}</td>
                             <td>$ {poke.price[0]}, $ {poke.price[1]}</td>
                             <td>
-                                <button className={styles.button}>Edit</button>
                                 <button className={styles.button} onClick={()=>handleDeletePoke(poke._id)} >Delete</button>
                             </td>
                         </tr>     
