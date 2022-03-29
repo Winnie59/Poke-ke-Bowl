@@ -4,11 +4,11 @@ import store from '../redux/store'
 import { Provider } from 'react-redux'
 import { UserProvider } from '@auth0/nextjs-auth0';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps,  }) {
   return (
     <UserProvider>
       < Provider store={store} >
-        <Layout>
+        <Layout >
           <Component {...pageProps} />
         </Layout>
       </Provider>

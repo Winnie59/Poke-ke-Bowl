@@ -9,8 +9,9 @@ import { useRouter } from 'next/router'
 import { reset } from '../redux/cartSlice'
 import Cash from '../component/Cash'
 import { useUser } from '@auth0/nextjs-auth0'
+import SearchBar from '../component/SearchBar'
 
-const Cart = () => {
+const Cart = ({orders}) => {
     const {user} = useUser()
     const cart = useSelector((state) => state.cart)
     const [open, setOpen] = useState(false)
@@ -169,10 +170,21 @@ const Cart = () => {
                      <button onClick={()=>setOpen(true)} className={styles.button}>CHECKOUT</button>    
                 )}
             </div>
+            <div className={styles.searchItem}>
+                <h3 className={styles.track}>Track your order</h3>
+                <SearchBar placeholder="Enter an order id..." orders={orders}/>
+            </div>
         </div>
         {cash && <Cash total={cart.total} createOrder={createOrder}/> }
     </div>
   )
 }
-
+export const getServerSideProps = async () => {
+    const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/orders`)
+      return {
+        props: {
+          orders:orderRes.data
+        }
+      }
+}
 export default Cart

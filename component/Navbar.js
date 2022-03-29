@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
 import { useUser } from '@auth0/nextjs-auth0'
+import SearchBar from './SearchBar'
 
 const Navbar = () => {
   const {user} = useUser()
@@ -25,9 +26,7 @@ const Navbar = () => {
       </div>
       <div className={styles.item}>
         <ul className={styles.list}>
-        {/* <Link href='/' passHref>
-          <li className={styles.listItem}>Home</li>
-        </Link> */}
+        <li className={styles.listItem}>Home</li>
           <li className={styles.listItem}>Menu</li>
           <li className={styles.listItem}>Pick Poke</li>
           <li className={styles.listItem}>About</li>
@@ -58,8 +57,7 @@ const Navbar = () => {
               <li className={styles.username}>{user.name}</li>
           }
            </div>
-          </Link>
-          
+          </Link >
           <Link  href='/cart' passHref>   
           <div className={styles.cart}>
             <Image src="/img/cart.png" alt="" width="55px" height="55px" />
@@ -70,5 +68,7 @@ const Navbar = () => {
     </div>
   )
 }
+
+
 
 export default Navbar

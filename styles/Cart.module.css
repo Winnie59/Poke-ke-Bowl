@@ -15,7 +15,7 @@
 }
 
 .right {
-    flex: 1;
+    flex: 1; 
 }
 
 .table {
@@ -37,7 +37,29 @@
     flex-direction: column;
     justify-content: space-between;
     color: white;
-    box-shadow: 10px 5px 5px lightgray
+    box-shadow: 10px 5px 5px lightgray;
+    border-radius: 5px;
+}
+
+.searchItem {
+    border-radius: 5px;
+    margin-top: 25px;
+    width: 90%;
+    max-height: 400px;
+    background-color: #333;
+    padding: 50px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: black;
+    box-shadow: 10px 5px 5px lightgray;
+    text-align: center;
+    align-items: center;
+}
+
+.track {
+    color: white;
 }
   
 .totalAmountSub {

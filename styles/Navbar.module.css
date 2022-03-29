@@ -17,7 +17,7 @@
 }
 
 .item:nth-child(2) {
-    flex: 2;
+    flex: 3;
 }
 .item:last-child {
     justify-content: flex-end;

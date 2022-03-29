@@ -20,6 +20,10 @@ const Pokeke = ({poke}) => {
     admin = true
   }
 
+  const refreshData = () => {
+    router.replace(router.asPath)
+  }
+
   const changePrice = (extra) => {
       setPrice(price + extra)
     }
@@ -40,7 +44,7 @@ const Pokeke = ({poke}) => {
         <div className={styles.left}>
           <div className={styles.edit}>
             {admin && <EditBtn setClose={setClose}/>}
-            {!close && <Edit setClose={setClose} poke ={poke}/> }
+            {!close && <Edit setClose={setClose} poke ={poke} refreshData={refreshData}/> }
           </div>
             <div className={styles.menu}>
               <h1 className={styles.title}>{poke.name}</h1>

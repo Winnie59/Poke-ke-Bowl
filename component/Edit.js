@@ -3,12 +3,9 @@ import styles from '../styles/AddNew.module.css'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 
-const Edit = ({setClose,poke}) => {
+const Edit = ({setClose,poke, refreshData}) => {
     const [editForm, setEditForm] = useState(poke)
     const router = useRouter()
-    const refreshData = () => {
-        router.replace(router.asPath)
-      }
 
     const handleChange = (e) =>{
         setEditForm({
