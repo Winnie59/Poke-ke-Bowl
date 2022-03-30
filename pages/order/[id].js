@@ -45,37 +45,32 @@ const Order = ({order}) => {
         <div className={styles.row}>
           <div className={statusClass(0)}>
             <Image src='/img/paid.png' alt='paid' width={55} height={55} />
-            <p>Payment</p>
             <div className={styles.check}>
-                <Image src='/img/check.png' alt='checked' width={20} height={20} />
+             <p>Payment</p>
             </div>
           </div>
           <div className={statusClass(1)}>
             <Image src='/img/prep.png' alt='prep' width={55} height={55} />
-            <p>Preparing</p>
             <div className={styles.check}>
-                <Image  src='/img/check.png' alt='checked' width={20} height={20} />
+              <p>Preparing</p>
             </div>
           </div>
           <div className={statusClass(2)}>
             <Image src='/img/pickup.png' alt='pickup' width={55} height={55} />
-            <p>To pick up</p>
             <div className={styles.check}>
-                <Image  src='/img/check.png' alt='checked' width={20} height={20} />
+              <p>To pick up</p>
             </div>
           </div>
           <div className={statusClass(3)}>
-            <Image src='/img/ontheway.png' alt='ontheway' width={55} height={55} />
-            <p>On the way</p>
+            <Image src='/img/ontheway.png' alt='ontheway' width={55} height={55} />    
             <div className={styles.check}>
-                <Image src='/img/check.png' alt='checked' width={20} height={20} />
+              <p>On the way</p>
             </div>
           </div>
           <div className={statusClass(4)}>
             <Image src='/img/deliver.png' alt='deliver' width={55} height={55} />
-            <p>Delivered</p>
             <div className={styles.check}>
-                <Image src='/img/check.png' alt='checked' width={20} height={20} />
+              <p>Delivered</p>
             </div>
           </div>
         </div>

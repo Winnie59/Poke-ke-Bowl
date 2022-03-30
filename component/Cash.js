@@ -7,7 +7,12 @@ const Cash = ({total, createOrder}) => {
     const [address, setAddress] = useState('')
     const [phone, setPhone] = useState('')
     const {user} = useUser()
-    const userId = user.sub
+    if (user) {
+    const userId = user.sub  
+    } else {
+      null
+    }
+    
 
     const handleClick = () => {
       createOrder({ customer, address, phone, total, method: 0, userId });

@@ -40,7 +40,7 @@ const User = ({orders}) => {
                     <tbody >
                     {orderList.map((order) => (
                         <tr className={styles.trTitle} key={order._id}>
-                          <Link href={`/order/${order._id}`}>
+                          <Link href={`/order/${order._id}`} passHref>
                             <td className={styles.orderId}>{order._id}</td>
                           </Link>  
                             <td>{order.customer}</td>

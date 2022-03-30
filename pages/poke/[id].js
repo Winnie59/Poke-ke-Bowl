@@ -7,6 +7,7 @@ import { addProduct } from '../../redux/cartSlice'
 import EditBtn from '../../component/EditBtn'
 import Edit from '../../component/Edit'
 import { useUser } from '@auth0/nextjs-auth0'
+import { useRouter } from 'next/router'
 
 const Pokeke = ({poke}) => {
   const [close, setClose] = useState(true)
@@ -14,6 +15,7 @@ const Pokeke = ({poke}) => {
   const [size, setSize] = useState(0)
   const [quantity, setQuantity] = useState(1)
   const dispatch = useDispatch()
+  const router = useRouter()
   const {user} = useUser()
   let admin = false
   if(user && user.email === `${process.env.NEXT_PUBLIC_ADMIN}`) {
@@ -36,6 +38,7 @@ const Pokeke = ({poke}) => {
 
   const handleClick = () => {
       dispatch(addProduct({...poke, size, price, quantity}))
+      router.push(`/#menu`)
   }
 
 

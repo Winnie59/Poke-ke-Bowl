@@ -21,7 +21,8 @@ const Cart = ({orders}) => {
     const currency = "USD"
     const style = { layout: "vertical" }
     const router = useRouter()
-
+    
+    
     const createOrder = async(data) => {
         try {
             const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/orders`, data)
@@ -83,7 +84,7 @@ const Cart = ({orders}) => {
                             customer: shipping.name.full_name, address: shipping.address.address_line_1,
                             total: cart.total,
                             method: 1,
-                            userId: user.sub
+                            userId: user ? user.sub : 0
                         })
                     });
                 }}
@@ -110,7 +111,7 @@ const Cart = ({orders}) => {
                         <tr className={styles.tr} key={product._id}>
                             <td>
                                 <div className={styles.img}>
-                                    <Image src={product.img} alt='aloha' layout='fill' objectFit='cover' />  
+                                    <Image src={product.img} alt={product.name} layout='fill' objectFit='cover' />  
                                 </div>
                             </td>
                             <td>
@@ -130,7 +131,7 @@ const Cart = ({orders}) => {
                             </td>
                         </tr>       
                     ))}
-                </tbody>  
+                </tbody>       
             </table>
         </div>
         <div className={styles.right}>
@@ -147,6 +148,16 @@ const Cart = ({orders}) => {
                 </div>
                 <div className={styles.totalTitle}>
                     <b className={styles.totalAmountTotal}>Total:</b>$ {cart.total}
+                </div>
+                <div className={`${styles.totalTitle} ${styles.pickup}`}>
+                    <div className={styles.checkBox}>
+                        <input type="checkbox" />
+                        <label >Pick Up</label>        
+                    </div>
+                    <div className={styles.checkBox}>
+                        <input type="checkbox" />
+                        <label>Delivery</label>   
+                    </div>
                 </div>
                 {open ? (
                     <div className={styles.payment}>

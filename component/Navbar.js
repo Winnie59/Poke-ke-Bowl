@@ -29,9 +29,13 @@ const Navbar = () => {
           <Link href='/' passHref >
           <li className={styles.listItem}>Home</li>
           </Link>
+          <Link href='/#menu' passHref>
           <li className={styles.listItem}>Menu</li>
+          </Link>
           <li className={styles.listItem}>Pick Poke</li>
+          <Link href='#contact' passHref>
           <li className={styles.listItem}>Contact</li>
+          </Link>
           { !user ?
             <Link href='/api/auth/login' passHref>
             <li className={styles.listItem}>Login</li>

@@ -109,6 +109,16 @@
     border-radius: 5px;
 }
 
+.checkBox {
+    
+}
+
+.pickup {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 @media screen and (max-width: 480px) {
     .container {
         flex-direction: column;
