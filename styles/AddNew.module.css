@@ -40,12 +40,6 @@
 .addBtn {
     padding: 10px;
     margin: 20px;
-    background-color: teal;
-    width: 150px;
-    border-radius: 10px;
-    color: white;
-    font-weight: 500;
-    text-align: center;
     cursor: pointer;
 }
 
@@ -89,5 +83,20 @@
 }
 
 .edit {
-    width: 50px;
+    margin-top: 0;
+}
+
+
+
+@media screen and (max-width:480px) {
+   .addBtn {
+       width: 60px;
+       height: 60px;
+       margin-bottom: 0;
+       margin-top: 10px;
+   }
+
+   .edit {
+       margin-top: 0;
+   }
 }

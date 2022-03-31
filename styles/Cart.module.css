@@ -43,7 +43,6 @@
 
 .searchItem {
     border-radius: 5px;
-    margin-top: 25px;
     width: 90%;
     max-height: 400px;
     background-color: #333;
@@ -56,6 +55,7 @@
     box-shadow: 10px 5px 5px lightgray;
     text-align: center;
     align-items: center;
+    margin: 25px auto;
 }
 
 .track {
@@ -109,10 +109,6 @@
     border-radius: 5px;
 }
 
-.checkBox {
-    
-}
-
 .pickup {
     margin-top: 15px;
     display: flex;
@@ -149,8 +145,13 @@
         height: 35vw;
     }
 
-    .name,.total{
+    .total{
         font-size: 24px;
+    }
+
+    .name {
+        font-size: 25px;
+        font-weight: bold;
     }
 
     .price,.quantity{

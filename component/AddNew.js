@@ -1,12 +1,13 @@
 import React from 'react'
 import styles from '../styles/AddNew.module.css'
+import Image from 'next/image'
 
 const AddNew = ({setClose}) => {
   return (
     <div>
-        <button onClick={()=>setClose(false)} className={styles.addBtn}>
-            Add New Poke
-        </button>
+        <div onClick={()=>setClose(false)} className={styles.addBtn}>
+            <Image className={styles.btn} src='/img/add.png' alt='add' width={50} height={50} objectFit='contain' />
+        </div>
     </div>
     
   )

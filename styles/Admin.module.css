@@ -5,6 +5,10 @@
 
 .item {
     flex: 1;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 20px 10px;
+    box-shadow: 5px 5px 5px lightgray;
 }
 
 .table {
@@ -13,21 +17,9 @@
     text-align: left;
 }
 
-.button, .next {
-    border: none;
-    color: white;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 3px;
-}
-
-.button:first-child ,.next {
-    background-color: teal;
-    margin-right: 5px;
-}
-
-.button:last-child {
-    background-color: gray;
+.button {
+    width: 30px;
+    height: 30px;
 }
 
 .orderId {
@@ -89,4 +81,73 @@
     height: 25px;
     text-align: center;
     border-radius: 5px;
+}
+
+.statusAdmin{
+   color: teal;
+   font-weight: bold;
+}
+
+.title {
+    text-align: center;
+}
+
+
+@media screen and (max-width: 480px) {
+    .container {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .id {
+        display: none;
+    }
+
+    .th {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .td {
+        font-size: 13px;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .box {
+        display: block;
+    }
+
+    .customer, .orderTotal, .orderMed, .orderStatus {
+        display: none;
+    }
+
+    .order {
+        margin: 30px 20px;
+    }
+
+    .profile {
+        margin-top: 0;
+    }
+
+    .profileUserImg {
+        margin-top: 20px;
+    }
+
+    .item {
+        margin: 20px 2px;
+    }
+
+    .statusAdmin{
+        font-weight: normal;
+     }
+
 }

@@ -150,12 +150,12 @@ const Cart = ({orders}) => {
                     <b className={styles.totalAmountTotal}>Total:</b>$ {cart.total}
                 </div>
                 <div className={`${styles.totalTitle} ${styles.pickup}`}>
-                    <div className={styles.checkBox}>
-                        <input type="checkbox" />
+                    <div >
+                        <input type="checkbox" className={styles.checkBox} />
                         <label >Pick Up</label>        
                     </div>
-                    <div className={styles.checkBox}>
-                        <input type="checkbox" />
+                    <div >
+                        <input type="checkbox" className={styles.checkBox}/>
                         <label>Delivery</label>   
                     </div>
                 </div>

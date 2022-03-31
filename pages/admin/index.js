@@ -44,28 +44,29 @@ const Admin = ({orders, pokes}) => {
   return (
     <div className={styles.container}>
         <div className={styles.item}>
-            <h1 className={styles.title}>Products</h1>
+            <h1 className={styles.title}>PRODUCTS</h1>
             <table className={styles.table}>
                 <tbody>
                     <tr className={styles.trTitle}>
-                        <th>Image</th>
-                        <th>Id</th>
-                        <th>Title</th>
-                        <th>Price (R , L)</th>
-                        <th>Action</th>
+                        <th className={styles.th}>Image</th>
+                        <th className={`${styles.id} ${styles.th}`}>Poke Id</th>
+                        <th className={styles.th}>Title</th>
+                        <th className={styles.th}>Price (R , L)</th>
                     </tr>
                 </tbody>
                 {pokeList.map((poke) => (
-                    <tbody key={poke._id}>
+                    <tbody className={styles.tbody} key={poke._id}>
                         <tr className={styles.trTitle}>
                             <td>
                                 <Image src={poke.img} alt='' width={50} height={50}  objectFit="cover" />
                             </td>
-                            <td>...{poke._id.slice(19,24)}</td>
-                            <td>{poke.name}</td>
-                            <td>$ {poke.price[0]}, $ {poke.price[1]}</td>
+                            <td className={`${styles.id} ${styles.td}`}>...{poke._id.slice(19,24)}</td>
+                            <td className={styles.td}>{poke.name}</td>
+                            <td className={styles.td}>$ {poke.price[0]}, $ {poke.price[1]}</td>
                             <td>
-                                <button className={styles.button} onClick={()=>handleDeletePoke(poke._id)} >Delete</button>
+                                <div className={styles.button} onClick={()=>handleDeletePoke(poke._id)}>
+                                   <Image src='/img/delete.png' alt='delete' width={50} height={50} objectFit='contain'/>   
+                                </div>
                             </td>
                         </tr>     
                     </tbody>
@@ -73,29 +74,32 @@ const Admin = ({orders, pokes}) => {
             </table>
         </div>
         <div className={styles.item}>
-            <h1 className={styles.title}>Orders</h1>
+            <h1 className={styles.title}>ORDERS</h1>
             <table className={styles.table}>
                 <tbody>
                     <tr className={styles.trTitle}>
-                        <th>Id</th>
-                        <th>Customer</th>
-                        <th>Total</th>
-                        <th>Payment</th>
-                        <th>Status</th>
-                        <th>action</th>
+                        <th className={`${styles.id} ${styles.th} `}>Order Id</th>
+                        <th className={styles.th}>Customer</th>
+                        <th className={styles.th}>Total</th>
+                        <th className={styles.th}>Payment</th>
+                        <th className={styles.th}>Status</th>
                     </tr>
                 </tbody>
                 {orderList.map((order) => (
-                    <tbody key={order._id}>
+                    <tbody className={styles.tbody} key={order._id}>
                         <tr className={styles.trTitle}>
-                            <td>...{order._id.slice(19,24)}</td>
-                            <td>{order.customer}</td>
-                            <td>$ {order.total}</td>
-                            <td>{(order.method === 0 ? 'Cash' : 'Paid')}</td>
-                            <td>{status[order.status]}</td>
+                            <td className={`${styles.id} ${styles.td}`}>...{order._id.slice(19,24)}</td>
+                            <td className={styles.td}>{order.customer}</td>
+                            <td className={styles.td}>$ {order.total}</td>
+                            <td className={styles.td}>{(order.method === 0 ? 'Cash' : 'Paid')}</td>
+                            <td className={`${styles.statusAdmin} ${styles.td}`}>{status[order.status]}</td>
                             <td> 
-                                <button className={styles.next} onClick={()=>handleStatus(order._id)}>Next Stage</button>
-                                 <button onClick={()=>handleDeleteOrder(order._id)} >Delete</button> 
+                                <div className={styles.button} >
+                                   <Image onClick={()=>handleStatus(order._id)} src='/img/next.webp' alt='next' width={50} height={50} objectFit='contain'/>   
+                                </div>
+                                <div className={styles.button} >
+                                   <Image onClick={()=>handleDeleteOrder(order._id)} src='/img/delete.png' alt='delete' width={50} height={50} objectFit='contain'/>   
+                                </div>
                             </td>
                         </tr>
                     </tbody>    

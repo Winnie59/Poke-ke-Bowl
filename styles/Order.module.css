@@ -123,10 +123,7 @@
     opacity: 0.3;
 }
   
-.undone .check,
-.inProgress .check {
-    display: none;
-}
+
 
 @media screen and (max-width: 480px) {
     .container {
