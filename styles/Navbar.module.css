@@ -1,7 +1,7 @@
 .container {
     background-color: #1be6cf;
     height: 95px;
-    padding: 0px 50px;
+    padding: 0px 25px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -17,7 +17,7 @@
 }
 
 .item:nth-child(2) {
-    flex: 2;
+    flex: 1.5;
 }
 .item:last-child {
     justify-content: flex-end;
@@ -107,6 +107,24 @@
     
 }
 
+.hamburger {
+    width: 32px;
+    height: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.line1, .line2, .line3 {
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transform-origin: left;
+    transition: all 2s ease;
+}
+
 
 
 @media screen and (max-width:480px) {
@@ -115,6 +133,15 @@
   }
 
   .item:nth-child(1) {
-    flex: 3;
+    flex: 2;
   }
+
+  .name {
+      display: none;
+  }
+  
+  .hamburger {
+      display: flex;
+  }
+
 }

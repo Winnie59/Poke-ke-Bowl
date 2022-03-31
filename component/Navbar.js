@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useUser } from '@auth0/nextjs-auth0'
 import SearchBar from './SearchBar'
 
-const Navbar = () => {
+const Navbar = ({sideOpen,setSideOpen}) => {
   const {user} = useUser()
   const quantity = useSelector(state => state.cart.quantity)
 
@@ -18,6 +18,11 @@ const Navbar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.item}>
+        <div className={styles.hamburger} onClick={()=>setSideOpen(!sideOpen)}>
+            <span className={styles.line1}></span>
+            <span className={styles.line2}></span>
+            <span className={styles.line3}></span>
+        </div>
         <div className={styles.logo}>
           <Link href='/' passHref>
             <Image src='/img/logo.png' alt='logo' width='80' height='80' />
@@ -52,14 +57,18 @@ const Navbar = () => {
           <Link href='/admin' passHref >
           <div>
           { (user && admin) && 
-              <li className={styles.username}>Admin {user.name}</li> 
+          <ul>
+              <li className={`${styles.username} ${styles.name}`}>Admin {user.name}</li> 
+          </ul>    
           }
            </div>
           </Link>
           <Link href='/user/me' passHref>
           <div>
           { (user && !admin) &&
-              <li className={styles.username}>{user.name}</li>
+            <ul>
+              <li className={`${styles.username} ${styles.name}`}>{user.name}</li>
+            </ul> 
           }
            </div>
           </Link >
