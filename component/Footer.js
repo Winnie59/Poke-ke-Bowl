@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={styles.item}>
         <div className={styles.card}>
           <h2 className={styles.motto}>
-            " POKE-KE BOWL FRESH EVERY BITES "
+            "POKE-KE BOWL FRESH EVERY BITES"
           </h2>
         </div>
         <div className={styles.card}>
