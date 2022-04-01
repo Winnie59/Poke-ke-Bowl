@@ -16,7 +16,7 @@ const Edit = ({setClose,poke, refreshData}) => {
     const handleSubmit = async(e) => {
         e.preventDefault()
         try {
-            const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}api/pokes/${poke._id}`, editForm)
+            const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${poke._id}`, editForm)
             setClose(true)
             refreshData()
         } catch (err) {

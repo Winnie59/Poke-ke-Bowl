@@ -11,7 +11,7 @@ const Admin = ({orders, pokes}) => {
 
     const handleDeletePoke = async (id) => {
         try {
-            const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}api/pokes/${id}`)
+            const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${id}`)
             setPokeList(pokeList.filter((poke)=> poke._id !== id))
         } catch(err) {
             console.log(err)
@@ -20,7 +20,7 @@ const Admin = ({orders, pokes}) => {
 
     const handleDeleteOrder = async (id) => {
         try {
-            const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}api/orders/${id}`)
+            const res = await axios.delete(`${process.env.NEXT_PUBLIC_URL}/api/orders/${id}`)
             setOrderList(orderList.filter((order)=> order._id !== id))
         } catch(err) {
             console.log(err)
@@ -31,7 +31,7 @@ const Admin = ({orders, pokes}) => {
         const findItem = orderList.filter(order=> order._id === id)[0]
         const currentStatus = findItem.status
         try {
-            const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}api/orders/${id}`, {status: currentStatus + 1})
+            const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/orders/${id}`, {status: currentStatus + 1})
             setOrderList([
                 res.data,
                 ...orderList.filter((order) => order._id !== id)
@@ -111,8 +111,8 @@ const Admin = ({orders, pokes}) => {
 }
 
 export const getServerSideProps = async () => {
-    const pokeRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/pokes`)
-    const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/orders`)
+    const pokeRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/pokes`)
+    const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/orders`)
 
     return {
         props: {
