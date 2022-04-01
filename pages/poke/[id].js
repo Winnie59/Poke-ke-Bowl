@@ -80,7 +80,7 @@ const Pokeke = ({poke}) => {
 }
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${params.id}`)
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/pokes/${params.id}`)
     return {
       props: {
         poke: res.data

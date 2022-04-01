@@ -40,7 +40,7 @@ const Add = ({setClose,refreshData}) => {
             const newPoke = {
                 name,description,price,img:url
             }
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/pokes`, newPoke)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}api/pokes`, newPoke)
             setClose(true)
             refreshData()
         } catch (err) {

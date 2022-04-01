@@ -25,7 +25,7 @@ const Cart = ({orders}) => {
     
     const createOrder = async(data) => {
         try {
-            const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/orders`, data)
+            const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}api/orders`, data)
             if (res.status === 201) {
                 dispatch(reset())
                 router.push(`/order/${res.data._id}`)  
@@ -191,7 +191,7 @@ const Cart = ({orders}) => {
   )
 }
 export const getServerSideProps = async () => {
-    const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/orders`)
+    const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/orders`)
       return {
         props: {
           orders:orderRes.data
