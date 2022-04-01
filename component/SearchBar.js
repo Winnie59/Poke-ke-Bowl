@@ -19,7 +19,6 @@ const SearchBar = ({placeholder, orders}) => {
             setFilteredData([])
         } else {
             setFilteredData(newFilter)
-            console.log(newFilter)
         }
     }
 

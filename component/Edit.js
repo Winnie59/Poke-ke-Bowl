@@ -19,7 +19,6 @@ const Edit = ({setClose,poke, refreshData}) => {
             const res = await axios.put(`${process.env.NEXT_PUBLIC_URL}/api/pokes/${poke._id}`, editForm)
             setClose(true)
             refreshData()
-            console.log(res.data)
         } catch (err) {
             console.log(err)
         }
