@@ -59,7 +59,7 @@ const User = ({orders}) => {
 }
 
 export const getServerSideProps = async () => {
-  const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/orders`)
+  const orderRes = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/orders`)
     return {
       props: {
         orders:orderRes.data
