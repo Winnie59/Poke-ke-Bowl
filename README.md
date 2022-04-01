@@ -1,34 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Poke-ke Bowl
 
-## Getting Started
+<img style="display: block;
+  margin-left: auto;
+  margin-right: auto;" src="public/img/readlogo.jpeg" alt="Logo" width="80" height="80" >
+  
 
-First, run the development server:
+Check out the website link here: [Poke-ke]()
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Description 
+Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery option. 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* Using Next.js the React framework for production.
+* Upload image using cloudinary. 
+* Create login account or using social media login and authentication through Auth0.
+* Using MongoDB to store database.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* Stat with the Home page. From this page we offer a slider that provides the promotions of the restaurant and the list of Poke menu.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+![home](public/img/me1.png)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* User can pick any poke products and apply them to the cart.
 
-## Learn More
+![cart](public/img/me2.jpeg)
 
-To learn more about Next.js, take a look at the following resources:
+![cart](public/img/me3.jpeg)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* User have the options to pay with cash, using paypal or credit card payment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![pay](public/img/me4.jpeg)
 
-## Deploy on Vercel
+![pay](public/img/me5.jpeg)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* After checkout user will be direct to an order page. From this page user can track the status of their order. The tracker order id is also available in cart checkout page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![order](public/img/me6.jpeg)
+
+![order](public/img/me7.jpeg)
+
+* User can create their account to view their order history by sign up from Auth0 login page, or social media account in this case using Google and Facebook.
+
+![login](public/img/me8.jpeg)
+
+![login](public/img/me9.jpeg)
+
+* After login admin is able to create, edit and delete the poke list item. Admin is allowed to track all orders and can update the status through the admin page.
+
+![admin](public/img/me10.jpeg)
+
+![admin](public/img/me11.jpeg)
+
+![admin](public/img/me12.jpeg)
+
+* Poke-ke bowl is mobile friendly responsive.
+
+![moblie](public/img/mobile1.jpeg)
+
+![mobile](public/img/mobile2.jpeg)
+
+![mobile](public/img/mobile3.jpeg)
+
+# Built With
+* [Next.js](https://nextjs.org)
+* [Auth0](https://auth0.com)
+* [Cloudinary](https://cloudinary.com)
+* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [MongoDB](https://www.mongodb.com)
+* [Mongoose](https://mongoosejs.com)
+
+# Installation instructions
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Winnie59/Poke-ke-Bowl
+   ```
+2. Install all NPM packages
+   ```sh
+   npm install
+
+# Wire Frames
+![wireFrames](public/img/wireframe1.jpeg)
+![wireFrames](public/img/wireframe2.jpeg)
+![wireFrames](public/img/wireframe3.jpeg)
+
+# Contact
+
+Winnie Bolm 
+* [Winnie Bolm LinkedIn](https://www.linkedin.com/in/winniebolm/) 
+* winnie.bolm@gmail.com
+
+# Improvement
+- Add delete items from cart function.
+- Add create your own poke bowl option.
+- User should be able to recieve the email notification after submit their order.
+- Update option for pick up or delivery.
+- Update contact form.
+- Using mapbox for finding restaurant location.
