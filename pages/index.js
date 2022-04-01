@@ -41,7 +41,7 @@ export default function Home({pokes}) {
 }
 
 export const getServerSideProps = async () => {
-  const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}api/pokes/`)
+  const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/pokes/`)
   return {
     props: {
       pokes: res.data
