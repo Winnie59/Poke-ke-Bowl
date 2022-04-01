@@ -1,11 +1,12 @@
 # Poke-ke Bowl
-
+<a herf="https://pokeke-bowl.vercel.app">
 <img style="display: block;
   margin-left: auto;
   margin-right: auto;" src="public/img/readlogo.jpeg" alt="Logo" width="80" height="80" >
+</a>
   
 
-Check out the website link here: [Poke-ke]()
+Check out the website link here: [Poke-ke](https://pokeke-bowl.vercel.app)
 
 # Description 
 Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery option. 
