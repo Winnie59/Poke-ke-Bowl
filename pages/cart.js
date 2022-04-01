@@ -28,7 +28,7 @@ const Cart = ({orders}) => {
             const res = await axios.post(`${process.env.NEXT_PUBLIC_URL}/api/orders`, data)
             if (res.status === 201) {
                 dispatch(reset())
-                router.push(`/order/${res.data._id}`)
+                router.push(`/order/${res.data._id}`)  
             } 
         } catch(err) {
             console.log(err)
