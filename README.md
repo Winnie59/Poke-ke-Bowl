@@ -94,3 +94,5 @@ Winnie Bolm
 - Update option for pick up or delivery.
 - Update contact form.
 - Using mapbox for finding restaurant location.
+- Adjust discounts and tax calculations.
+- Adjust credit card payment button. 

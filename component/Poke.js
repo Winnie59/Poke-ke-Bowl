@@ -9,7 +9,7 @@ const Poke = ({poke}) => {
       <div className={styles.container}>
           <Image src={poke.img} alt='aloha' width='500' height='500' />
           <h3 className={styles.title}>{poke.name}</h3>
-          <h3 className={styles.price}>{poke.price[0]}</h3>
+          <h3 className={styles.price}>$ {poke.price[0]}</h3>
       </div>
     </Link>
   )
