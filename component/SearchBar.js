@@ -11,7 +11,6 @@ const SearchBar = ({placeholder, orders}) => {
     const handleFilter = (e) => {
         const searchWord = e.target.value
         setWordEnter(searchWord)
-        console.log(orders)
         const newFilter = orders?.filter((order) => {
             return order._id.toLowerCase().includes(searchWord.toLowerCase())
         })
