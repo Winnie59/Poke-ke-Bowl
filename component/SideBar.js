@@ -16,25 +16,25 @@ const SideBar = ({sideOpen, setSideOpen}) => {
         <div className={`${styles.menu} ${styles.active}`}>
              <ul className={styles.list}>
           <Link href='/' passHref >
-          <li className={styles.listItem}>Home</li>
+          <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Home</li>
           </Link>
           <Link href='/#menu' passHref>
-          <li className={styles.listItem}>Menu</li>
+          <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Menu</li>
           </Link>
           {/* <li className={styles.listItem}>Pick Poke</li> */}
           <Link href='#contact' passHref>
-          <li className={styles.listItem}>Find Us</li>
+          <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Find Us</li>
           </Link>
           <Link href='#contact' passHref>
-          <li className={styles.listItem}>Contact</li>
+          <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Contact</li>
           </Link>
           { !user ?
             <Link href='/api/auth/login' passHref>
-            <li className={styles.listItem}>Login</li>
+            <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Login</li>
             </Link> 
             :
             <Link href='/api/auth/logout' passHref >
-            <li className={styles.listItem}>Logout</li>
+            <li className={styles.listItem} onClick={()=>setSideOpen(!sideOpen)}>Logout</li>
             </Link>
           }      
             </ul>
@@ -43,7 +43,7 @@ const SideBar = ({sideOpen, setSideOpen}) => {
           { (user && admin) && 
             <ul  className={styles.login}>
               <li className={styles.username}>Hello,</li>
-              <li className={styles.username}>Admin {user.name}</li> 
+              <li className={styles.username} onClick={()=>setSideOpen(!sideOpen)}>Admin {user.name}</li> 
             </ul>  
           }
            </div>
@@ -53,7 +53,7 @@ const SideBar = ({sideOpen, setSideOpen}) => {
           { (user && !admin) &&
             <ul  className={styles.login}>
                 <li className={styles.username}>Hello,</li>
-                <li className={styles.username}>{user.name}</li>
+                <li className={styles.username} onClick={()=>setSideOpen(!sideOpen)}>{user.name}</li>
             </ul> 
           }
            </div>

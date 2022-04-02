@@ -16,7 +16,7 @@ Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery opti
 * Create login account or using social media login and authentication through Auth0.
 * Using MongoDB to store database.
 
-* Stat with the Home page. From this page we offer a slider that provides the promotions of the restaurant and the list of Poke menu.
+* Start with the Home page. From this page there is a slider that provides promotions of the restaurant and list of Poke menu.
 
 ![home](public/img/me1.png)
 
@@ -32,13 +32,13 @@ Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery opti
 
 ![pay](public/img/me5.jpeg)
 
-* After checkout user will be direct to an order page. From this page user can track the status of their order. The tracker order id is also available in cart checkout page.
+* After checkout user will be direct to an order page. From this page user are able to track the status of their order. The order id tracker is also available in cart checkout page.
 
 ![order](public/img/me6.jpeg)
 
 ![order](public/img/me7.jpeg)
 
-* User can create their account to view their order history by sign up from Auth0 login page, or social media account in this case using Google and Facebook.
+* User can create their account to view their order's history by sign up with Auth0 login page or login with social media account in this case using Google and Facebook.
 
 ![login](public/img/me8.jpeg)
 
