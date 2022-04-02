@@ -68,7 +68,9 @@ const SideBar = ({sideOpen, setSideOpen}) => {
           <Link href='/#menu' passHref>
           <li className={styles.listItem}>Menu</li>
           </Link>
-          <li className={styles.listItem}>Pick Poke</li>
+          <Link href='#contact' passHref>
+          <li className={styles.listItem}>Find Us</li>
+          </Link>
           <Link href='#contact' passHref>
           <li className={styles.listItem}>Contact</li>
           </Link>
