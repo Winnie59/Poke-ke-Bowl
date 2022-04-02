@@ -77,6 +77,13 @@ Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery opti
    ```sh
    npm install
 
+3. Create your `.env.local` variables
+ 
+4. Run npm run dev
+   ```sh
+   // cd into the directory
+   npm run dev
+
 # Wire Frames
 ![wireFrames](public/img/wireframe1.jpeg)
 ![wireFrames](public/img/wireframe2.jpeg)
