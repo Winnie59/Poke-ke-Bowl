@@ -71,7 +71,7 @@ Poke-ke Bowl is a web restaurant with capabilities of checkout and delivery opti
 # Installation instructions
 1. Clone the repo
    ```sh
-   git clone https://github.com/Winnie59/Poke-ke-Bowl
+   git clone https://github.com/your_username_/Poke-ke-Bowl
    ```
 2. Install all NPM packages
    ```sh
